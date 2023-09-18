@@ -1,12 +1,13 @@
 package com.imregulkurt.apphw1.ui.personal
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.fragment.app.Fragment
+import com.imregulkurt.apphw1.R
 import com.imregulkurt.apphw1.common.viewBinding
 import com.imregulkurt.apphw1.databinding.FragmentPersonalBinding
 
-class PersonalFragment : Fragment() {
+class PersonalFragment : Fragment(R.layout.fragment_personal) {
 
     private val binding by viewBinding(FragmentPersonalBinding::bind)
 
