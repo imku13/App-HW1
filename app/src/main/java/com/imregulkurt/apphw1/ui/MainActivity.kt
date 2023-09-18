@@ -1,7 +1,8 @@
-package com.imregulkurt.apphw1
+package com.imregulkurt.apphw1.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.imregulkurt.apphw1.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
