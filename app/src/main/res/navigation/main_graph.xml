@@ -9,7 +9,15 @@
         android:id="@+id/homeFragment"
         android:name="com.imregulkurt.apphw1.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/home_to_personal"
+            app:destination="@id/personalFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/personalFragment"
         android:name="com.imregulkurt.apphw1.ui.personal.PersonalFragment"
