@@ -1,2 +1,2 @@
 # App-HW1
-First application homework for the bootcamp by İmregül Kurt.
+Navigation component homework for the bootcamp by İmregül Kurt.
