@@ -22,30 +22,33 @@ class SurveyFragment : Fragment(R.layout.fragment_survey) {
         val surnameText = "Your surname: " + args.userInfo.surname
         binding.surveyName.text = nameText
         binding.surveySurname.text = surnameText
-        val question1Text = binding.surveyQ1Input.editText?.text.toString()
-        val question2Text = binding.surveyQ2Input.editText?.text.toString()
-        val question3Text = binding.surveyQ3Input.editText?.text.toString()
-        val question1TextValid: Boolean = question1Text.isNotEmpty()
-        val question2TextValid: Boolean = question2Text.isNotEmpty()
-        val question3TextValid: Boolean = question3Text.isNotEmpty()
-        if (question1TextValid && question2TextValid && question3TextValid) {
-            val emailText = args.userInfo.email
-            val phoneText = args.userInfo.phone
-            val resultInfo = ResultInfo(
-                id = 1,
-                name = nameText,
-                surname = surnameText,
-                email = emailText,
-                phone = phoneText,
-                question1 = question1Text,
-                question2 = question2Text,
-                question3 = question3Text
-            )
-            val action = SurveyFragmentDirections.surveyToResult(resultInfo)
-            findNavController().navigate(action)
-        }
-        else {
-            Toast.makeText(activity, "Question fields cannot be empty!", Toast.LENGTH_SHORT).show()
+
+        binding.surveyButton.setOnClickListener {
+            val question1Text = binding.surveyQ1Input.editText?.text.toString()
+            val question2Text = binding.surveyQ2Input.editText?.text.toString()
+            val question3Text = binding.surveyQ3Input.editText?.text.toString()
+            val question1TextValid: Boolean = question1Text.isNotEmpty()
+            val question2TextValid: Boolean = question2Text.isNotEmpty()
+            val question3TextValid: Boolean = question3Text.isNotEmpty()
+            if (question1TextValid && question2TextValid && question3TextValid) {
+                val emailText = args.userInfo.email
+                val phoneText = args.userInfo.phone
+                val resultInfo = ResultInfo(
+                    id = 1,
+                    name = args.userInfo.name,
+                    surname = args.userInfo.surname,
+                    email = emailText,
+                    phone = phoneText,
+                    question1 = question1Text,
+                    question2 = question2Text,
+                    question3 = question3Text
+                )
+                val action = SurveyFragmentDirections.surveyToResult(resultInfo)
+                findNavController().navigate(action)
+            }
+            else {
+                Toast.makeText(activity, "Question fields cannot be empty!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

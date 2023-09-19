@@ -32,8 +32,8 @@ class PersonalFragment : Fragment(R.layout.fragment_personal) {
             if (isEmailValid && isPhoneValid) {
                 val userInfo = UserInfo(
                     id = 1,
-                    name = nameText,
-                    surname = surnameText,
+                    name = args.name,
+                    surname = args.surname,
                     email = emailText,
                     phone = phoneText
                 )

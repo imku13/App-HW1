@@ -58,7 +58,9 @@
         <action
             android:id="@+id/result_to_home"
             app:destination="@id/homeFragment"
-            app:enterAnim="@anim/nav_default_exit_anim" />
+            app:enterAnim="@anim/nav_default_exit_anim"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
         <argument
             android:name="resultInfo"
             app:argType="com.imregulkurt.apphw1.data.model.ResultInfo" />
