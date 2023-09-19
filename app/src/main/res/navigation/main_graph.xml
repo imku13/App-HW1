@@ -32,7 +32,7 @@
             android:id="@+id/personal_to_survey"
             app:destination="@id/surveyFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
-            app:popUpTo="@id/surveyFragment"
+            app:popUpTo="@id/personalFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -47,7 +47,7 @@
             android:id="@+id/survey_to_result"
             app:destination="@id/resultFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
-            app:popUpTo="@id/resultFragment"
+            app:popUpTo="@id/surveyFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -59,7 +59,7 @@
             android:id="@+id/result_to_home"
             app:destination="@id/homeFragment"
             app:enterAnim="@anim/nav_default_exit_anim"
-            app:popUpTo="@id/homeFragment"
+            app:popUpTo="@id/resultFragment"
             app:popUpToInclusive="true" />
         <argument
             android:name="resultInfo"
