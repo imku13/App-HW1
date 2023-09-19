@@ -1,6 +1,7 @@
 package com.imregulkurt.apphw1.ui.personal
 
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -18,25 +19,30 @@ class PersonalFragment : Fragment(R.layout.fragment_personal) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val nameText = "Name you entered: " + args.name
-        val surnameText = "Surname you entered: " + args.surname
+        val nameText = "Your name: " + args.name
+        val surnameText = "Your surname: " + args.surname
         binding.personalName.text = nameText
         binding.personalSurname.text = surnameText
 
         binding.personalButton.setOnClickListener {
             val emailText = binding.personalEmailInput.text.toString()
             val phoneText = binding.personalPhoneInput.text.toString()
-            Toast.makeText(activity, emailText, Toast.LENGTH_SHORT).show()
-
-            // val userInfo = UserInfo(
-            //     1,
-            //     args.name,
-            //     args.surname,
-            //     emailText,
-            //     phoneText
-            // )
-            // val action = PersonalFragmentDirections.personalToSurvey(userInfo)
-            // findNavController().navigate(action)
+            val isEmailValid: Boolean = emailText.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailText).matches()
+            val isPhoneValid: Boolean = phoneText.isNotEmpty() && Patterns.PHONE.matcher(phoneText).matches()
+            if (isEmailValid && isPhoneValid) {
+                val userInfo = UserInfo(
+                    id = 1,
+                    name = nameText,
+                    surname = surnameText,
+                    email = emailText,
+                    phone = phoneText
+                )
+                val action = PersonalFragmentDirections.personalToSurvey(userInfo)
+                findNavController().navigate(action)
+            }
+            else {
+                Toast.makeText(activity, "Email or phone input is invalid.", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

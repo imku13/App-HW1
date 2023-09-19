@@ -9,8 +9,9 @@ import com.imregulkurt.apphw1.common.viewBinding
 import com.imregulkurt.apphw1.databinding.FragmentResultBinding
 
 class ResultFragment : Fragment(R.layout.fragment_result) {
+
     private val binding by viewBinding(FragmentResultBinding::bind)
-    // private val args by navArgs<ResultFragmentArgs>()
+    private val args by navArgs<ResultFragmentArgs>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

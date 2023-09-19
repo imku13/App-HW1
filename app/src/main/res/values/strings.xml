@@ -28,4 +28,5 @@
     <string name="survey_question_3">Question 3:</string>
     <string name="survey_placeholder_q3">What is your favorite food?</string>
     <string name="survey_button">Finish</string>
+    <string name="result_title">Results</string>
 </resources>
