@@ -17,11 +17,15 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.homeButton.setOnClickListener {
-            if (binding.homeNameInput.editText?.text?.isEmpty() == true) {
+            if (binding.homeNameInput.editText?.text?.isEmpty() == true ||
+                    binding.homeSurnameInput.editText?.text?.isEmpty() == true) {
                 Toast.makeText(activity, "Input fields cannot be empty!", Toast.LENGTH_SHORT).show()
             }
             else {
-                findNavController().navigate(R.id.home_to_personal)
+                val name = binding.homeNameInput.editText?.text.toString()
+                val surname = binding.homeSurnameInput.editText?.text.toString()
+                val action = HomeFragmentDirections.homeToPersonal(name, surname)
+                findNavController().navigate(action)
             }
         }
     }

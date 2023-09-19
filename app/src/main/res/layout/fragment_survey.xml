@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#51A3BD"
-    tools:context=".ui.home.HomeFragment">
+    android:background="#FF9E5E"
+    tools:context=".ui.survey.SurveyFragment">
 
     <TextView
-        android:id="@+id/app_title"
+        android:id="@+id/survey_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="monospace"
-        android:text="@string/home_title"
+        android:text="@string/survey_title"
         android:textAlignment="center"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -22,98 +22,137 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/app_desc"
+        android:id="@+id/survey_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:ellipsize="start"
-        android:text="@string/app_desc"
+        android:layout_marginTop="20dp"
+        android:fontFamily="monospace"
+        android:text="@string/survey_name"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_title" />
+        app:layout_constraintTop_toBottomOf="@+id/survey_title" />
 
     <TextView
-        android:id="@+id/home_name"
+        android:id="@+id/survey_surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="monospace"
+        android:text="@string/survey_surname"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/survey_name" />
+
+    <TextView
+        android:id="@+id/survey_question_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="monospace"
-        android:text="@string/home_name_field"
-        android:textColor="#000000"
+        android:text="@string/survey_question_1"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/survey_surname" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/home_name_input"
+        android:id="@+id/survey_q1_input"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_name">
+        app:layout_constraintTop_toBottomOf="@+id/survey_question_1">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#FFFFFF"
+            android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:hint="@string/home_placeholder_name"
+            android:hint="@string/survey_placeholder_q1"
             android:textAlignment="textStart"
-            android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/home_surname"
+        android:id="@+id/survey_question_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:fontFamily="monospace"
-        android:text="@string/home_surname_field"
-        android:textAlignment="viewStart"
-        android:textColor="#000000"
+        android:text="@string/survey_question_2"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_name_input" />
+        app:layout_constraintTop_toBottomOf="@+id/survey_q1_input" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/home_surname_input"
+        android:id="@+id/survey_q2_input"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_surname">
+        app:layout_constraintTop_toBottomOf="@+id/survey_question_2">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
             android:fontFamily="monospace"
-            android:hint="@string/home_placeholder_surname"
+            android:hint="@string/survey_placeholder_q2"
             android:textAlignment="textStart"
-            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/survey_question_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="monospace"
+        android:text="@string/survey_question_3"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/survey_q2_input" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/survey_q3_input"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/survey_question_3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:hint="@string/survey_placeholder_q3"
+            android:textAlignment="textStart"
             android:textSize="16sp"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/home_button"
+        android:id="@+id/survey_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         android:fontFamily="monospace"
-        android:text="@string/home_button_text"
+        android:text="@string/survey_button"
+        android:textAlignment="center"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

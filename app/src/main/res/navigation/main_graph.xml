@@ -13,8 +13,7 @@
         <action
             android:id="@+id/home_to_personal"
             app:destination="@id/personalFragment"
-            app:enterAnim="@android:anim/slide_out_right"
-            app:exitAnim="@android:anim/slide_in_left"
+            app:enterAnim="@anim/nav_default_enter_anim"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -22,5 +21,46 @@
         android:id="@+id/personalFragment"
         android:name="com.imregulkurt.apphw1.ui.personal.PersonalFragment"
         android:label="fragment_personal"
-        tools:layout="@layout/fragment_personal" />
+        tools:layout="@layout/fragment_personal" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="surname"
+            app:argType="string" />
+        <action
+            android:id="@+id/personal_to_survey"
+            app:destination="@id/surveyFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popUpTo="@id/surveyFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/surveyFragment"
+        android:name="com.imregulkurt.apphw1.ui.survey.SurveyFragment"
+        android:label="fragment_survey"
+        tools:layout="@layout/fragment_survey" >
+        <argument
+            android:name="userInfo"
+            app:argType="com.imregulkurt.apphw1.data.model.UserInfo" />
+        <action
+            android:id="@+id/survey_to_result"
+            app:destination="@id/resultFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popUpTo="@id/resultFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.imregulkurt.apphw1.ui.result.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/result_to_home"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/nav_default_exit_anim" />
+        <argument
+            android:name="resultInfo"
+            app:argType="com.imregulkurt.apphw1.data.model.ResultInfo" />
+    </fragment>
 </navigation>
