@@ -14,8 +14,7 @@
             android:id="@+id/home_to_personal"
             app:destination="@id/personalFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/personalFragment"
@@ -32,8 +31,7 @@
             android:id="@+id/personal_to_survey"
             app:destination="@id/surveyFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
-            app:popUpTo="@id/personalFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/surveyFragment"
@@ -47,8 +45,7 @@
             android:id="@+id/survey_to_result"
             app:destination="@id/resultFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
-            app:popUpTo="@id/surveyFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -59,7 +56,7 @@
             android:id="@+id/result_to_home"
             app:destination="@id/homeFragment"
             app:enterAnim="@anim/nav_default_exit_anim"
-            app:popUpTo="@id/resultFragment"
+            app:popUpTo="@id/personalFragment"
             app:popUpToInclusive="true" />
         <argument
             android:name="resultInfo"
